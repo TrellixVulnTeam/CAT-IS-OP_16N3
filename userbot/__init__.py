@@ -13,7 +13,7 @@ from telethon.sessions import StringSession
 from .Config import Config
 
 StartTime = time.time()
-catversion = "2.10.6"
+catversion = "1.2"
 
 
 CAT_ID = ["1035034432", "551290198"]
