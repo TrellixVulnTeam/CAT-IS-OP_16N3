@@ -162,8 +162,7 @@ async def upstream(event):
     # Special case for deploy
     if changelog == "" and not force_update:
         await event.edit(
-            "\n`GANDU is`  **Fully-UPDATE**  `with`  "
-            f"**{UPSTREAM_REPO_BRANCH}**\n"
+            "\n`GANDU is`  **Fully-UPDATE**  `with`  " f"**{UPSTREAM_REPO_BRANCH}**\n"
         )
         return repo.__del__()
     if conf == "" and not force_update:

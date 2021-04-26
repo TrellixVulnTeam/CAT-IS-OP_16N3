@@ -1,9 +1,12 @@
 import asyncio
+
+from userbot import CMD_HELP, bot
 from userbot.legend import NAME
-from userbot import CMD_HELP
 from userbot.utils import admin_cmd, sudo_cmd
-from userbot import bot
+
 PRO = NAME
+
+
 @bot.on(admin_cmd("sfed ?(.*)"))
 @bot.on(sudo_cmd("sfed ?(.*)", allow_sudo=True))
 async def _(event):
@@ -14,9 +17,7 @@ async def _(event):
     if event.reply_to_msg_id:
         previous_message = await event.get_reply_message()
         if previous_message.media:
-            downloaded_file_name = await bot.download_media(
-                previous_message, "fedlist"
-            )
+            downloaded_file_name = await bot.download_media(previous_message, "fedlist")
             await asyncio.sleep(6)
             file = open(downloaded_file_name, "r")
             lines = file.readlines()
@@ -87,7 +88,9 @@ async def _(event):
                     else:
                         return
                 if len(fedList) == 0:
-                    await event.edit(f"𝚠𝚊𝚒𝚝 𝙼𝙰𝚂𝚃𝙴𝚁 𝙸 𝙰𝙼 𝙲𝙷𝙴𝙲𝙺𝙸𝙽𝙶 {PRO} 𝙰𝙻𝙻 𝙵𝙴𝙳𝚂 𝙶𝙸𝚅𝙴 𝙼𝙴 𝚃𝙸𝙼𝙴 ({a+1}/3)...")
+                    await event.edit(
+                        f"𝚠𝚊𝚒𝚝 𝙼𝙰𝚂𝚃𝙴𝚁 𝙸 𝙰𝙼 𝙲𝙷𝙴𝙲𝙺𝙸𝙽𝙶 {PRO} 𝙰𝙻𝙻 𝙵𝙴𝙳𝚂 𝙶𝙸𝚅𝙴 𝙼𝙴 𝚃𝙸𝙼𝙴 ({a+1}/3)..."
+                    )
                 else:
                     break
         else:
@@ -138,7 +141,7 @@ async def _(event):
 
 
 # By @HeisenbergTheDanger, @its_xditya
-# MODIFIED BY PROBOYX 
+# MODIFIED BY PROBOYX
 
 
 @bot.on(admin_cmd("ganduunfban ?(.*)"))
@@ -167,9 +170,7 @@ async def _(event):
                 await response.click(0)
                 fedfile = await bot_conv.get_response()
                 if fedfile.media:
-                    downloaded_file_name = await bot.download_media(
-                        fedfile, "fedlist"
-                    )
+                    downloaded_file_name = await bot.download_media(fedfile, "fedlist")
                     file = open(downloaded_file_name, "r")
                     lines = file.readlines()
                     for line in lines:
@@ -177,7 +178,9 @@ async def _(event):
                 else:
                     return
                 if len(fedList) == 0:
-                    await event.edit(f"FINDING {PRO} ALL FEDS GIVE ME SOME TIME({a+1}/3)...")
+                    await event.edit(
+                        f"FINDING {PRO} ALL FEDS GIVE ME SOME TIME({a+1}/3)..."
+                    )
                 else:
                     break
     else:
@@ -211,7 +214,9 @@ async def _(event):
         await asyncio.sleep(5)
         await bot.send_message(chat, f"/unfban {FBAN}")
         await asyncio.sleep(5)
-    await event.edit(f"𝙳𝚎𝚟𝚒𝚕UnFBan Completed. Affected {len(fedList)} Feds by {PRO}.\n#DEVILBOT")
+    await event.edit(
+        f"𝙳𝚎𝚟𝚒𝚕UnFBan Completed. Affected {len(fedList)} Feds by {PRO}.\n#DEVILBOT"
+    )
 
 
 # By TEAMLEGEND
