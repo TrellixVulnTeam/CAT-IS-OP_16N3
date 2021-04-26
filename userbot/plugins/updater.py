@@ -16,7 +16,7 @@ heroku_api = "https://api.heroku.com"
 
 UPSTREAM_REPO_BRANCH = Config.UPSTREAM_REPO_BRANCH
 
-if Config.UPSTREAM_REPO == "goodcat":
+if Config.UPSTREAM_REPO == "cat-op":
     UPSTREAM_REPO_URL = "https://github.com/draj48/CAT-IS-OP"
 elif Config.UPSTREAM_REPO == "badcat":
     UPSTREAM_REPO_URL = "https://github.com/Jisan09/catuserbot"
